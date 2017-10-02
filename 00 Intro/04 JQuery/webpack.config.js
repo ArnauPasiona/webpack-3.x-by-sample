@@ -5,8 +5,11 @@ var webpack = require('webpack');
 var basePath = __dirname;
 
 module.exports = {
+  resolve: {
+    extensions: ['.js', '.ts'],
+  },
   entry: {
-    app: './students.js',
+    app: './students.ts',
     vendor: [
       'jquery',
     ],
@@ -18,9 +21,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.ts$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: 'awesome-typescript-loader',
       },
     ],
   },
